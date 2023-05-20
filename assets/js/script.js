@@ -9,7 +9,10 @@ function IMCcalculator(userPeso,userAltura) {
 
     const resultado = userPeso / (userAltura * userAltura)
 
-    if (resultado <= 18.5){
+    if (userPeso === "" || userAltura === ""){
+        result.innerText = "Dados inválidos"
+        result.style.backgroundColor = "rgba(255, 0, 0, 0.438)"
+    } else if (resultado <= 18.5){
         result.innerText = `Seu IMC é de ${resultado.toFixed(2)} (abaixo do peso)`
         result.style.backgroundColor = "rgba(255, 0, 0, 0.438)"
     } else if (resultado > 18.5 && resultado <= 24.9){
